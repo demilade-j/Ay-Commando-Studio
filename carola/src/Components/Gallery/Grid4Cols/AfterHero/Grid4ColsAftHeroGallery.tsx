@@ -1,12 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import Lightbox from "yet-another-react-lightbox";
-import Captions from "yet-another-react-lightbox/plugins/captions";
+import Lightbox, { type SlideImage } from "yet-another-react-lightbox";
 import { motion, AnimatePresence } from "framer-motion";
 
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/captions.css";
+
+// Extend the default slide type so TypeScript knows about `title`
+type CustomSlide = SlideImage & {
+  title?: string;
+};
 
 const pics = [
   { id: 1, img: "/gal-grid-01.jpg", title: "Elegant Wedding Setup" },
@@ -27,7 +31,8 @@ export default function Grid4ColsAftHeroGallery() {
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
 
-  const slides = pics.map((pic) => ({
+  // ✅ Use the custom type so we keep title information
+  const slides: CustomSlide[] = pics.map((pic) => ({
     src: pic.img,
     title: pic.title,
   }));
@@ -35,11 +40,11 @@ export default function Grid4ColsAftHeroGallery() {
   return (
     <>
       {/* Gallery grid */}
-      <>
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
         {pics.map((pic, i) => (
           <motion.div
             key={pic.id}
-            className="relative mb-4 overflow-hidden rounded-md group cursor-pointer"
+            className="relative overflow-hidden rounded-md group cursor-pointer"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
             onClick={() => {
@@ -66,7 +71,7 @@ export default function Grid4ColsAftHeroGallery() {
             </span>
           </motion.div>
         ))}
-      </>
+      </div>
 
       {/* Lightbox Modal */}
       <Lightbox
@@ -74,26 +79,28 @@ export default function Grid4ColsAftHeroGallery() {
         close={() => setOpen(false)}
         slides={slides}
         index={index}
-        // plugins={() =>{
-        //   [Captions]
-        // }}
         on={{
           view: ({ index: currentIndex }) => setIndex(currentIndex),
         }}
         render={{
-          slide: ({ slide }) => (
+          slide: ({ slide }: { slide: CustomSlide }) => (
             <>
-            <motion.img
-              key={slide.src}
-              src={slide.src}
-              // alt={slide.title}
-              className="w-full h-full object-contain"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.6 }}
-            />
-            <div className='text-white text-xl absolute bottom-5 right-10'>{slide.title}</div>
+              <motion.img
+                key={slide.src}
+                src={slide.src}
+                alt={slide.title}
+                className="w-full h-full object-contain"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.6 }}
+              />
+              {/* ✅ Custom title caption */}
+              {slide.title && (
+                <div className="text-white text-xl absolute bottom-5 right-10">
+                  {slide.title}
+                </div>
+              )}
             </>
           ),
           slideFooter: () => (
@@ -106,7 +113,7 @@ export default function Grid4ColsAftHeroGallery() {
                 exit={{ opacity: 0, y: 10 }}
                 transition={{ duration: 0.3 }}
               >
-                {index + 1} / {slides.length} 
+                {index + 1} / {slides.length}
               </motion.div>
             </AnimatePresence>
           ),
