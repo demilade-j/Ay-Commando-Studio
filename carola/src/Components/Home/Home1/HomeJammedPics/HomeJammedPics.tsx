@@ -36,8 +36,6 @@ const pic = [
 ];
 
 export default function HomeJammedPics() {
-    const navigate = useNavigate()
-
   return (
     <div className="grid lg:grid-cols-8 md:grid-cols-8 grid-cols-4 relative">
       {pic.map((pic) => (
