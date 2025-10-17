@@ -42,11 +42,11 @@ export default function HomeFooter() {
             07057723767 (Coder)
           </a>
           
-          <a href="mailto:" className="flex gap-2 items-center ">
+          <a href="mailto:ajayiemma05@gmail.com" className="flex gap-2 items-center ">
             <span>
               <Mail size={18} className="text-green-700" />
             </span>
-            contact@example.com
+            ajayiemma05@gmail.com
           </a>
         </p>
       </main>
