@@ -75,7 +75,7 @@ export default function HomeFooter() {
       </main>    
     </div>
 
-    <div className="w-full flex items-center justify-center pt-25 pb-18">2025 © Tilia. Designed by MatchThemes.</div>
+    <div className="w-full flex items-center justify-center pt-25 pb-18">2025 © AjCommando. Designed by Coder John.</div>
     </>
   );
 }

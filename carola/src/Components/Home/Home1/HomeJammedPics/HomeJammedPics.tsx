@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 const pic = [
   {
     id: 1,
@@ -34,6 +36,8 @@ const pic = [
 ];
 
 export default function HomeJammedPics() {
+    const navigate = useNavigate()
+
   return (
     <div className="grid lg:grid-cols-8 md:grid-cols-8 grid-cols-4 relative">
       {pic.map((pic) => (
@@ -48,7 +52,7 @@ export default function HomeJammedPics() {
           </main>
         </div>
       ))}
-      <button className="absolute bottom-4 z-40 cursor-pointer lg:ms-[47%] md:ms-[45%] sm:ms-[44%] ms-[42%] bg-white text-sm py-1 px-2">Follow Us!</button>
+      <button onClick={() => window.open("https://www.instagram.com/ajcommando_studio", "_blank")} className="absolute bottom-4 z-40 cursor-pointer lg:ms-[47%] md:ms-[45%] sm:ms-[44%] ms-[42%] bg-white text-sm py-1 px-2">Follow Us!</button>
     </div>
   );
 }

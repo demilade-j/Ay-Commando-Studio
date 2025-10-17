@@ -4,8 +4,8 @@ import GalleryModal from "../../src/Components/Home/NavLikes/Modals/GalleryModal
 import { useState, useRef } from "react";
 
 const navItems = [
-  { name: "Home", path: "/", modal: <HomeModal /> },
-  { name: "Galleries", path: "/masonaryCols2", modal: <GalleryModal /> },
+  { name: "Home", path: "///", modal: <HomeModal /> },
+  { name: "Galleries", path: "//", modal: <GalleryModal /> },
   { name: "FAQs", path: "/FAQs" },
   { name: "Contact", path: "/contact" },
 ];
@@ -35,7 +35,7 @@ export default function NavLinks() {
           onMouseLeave={handleMouseLeave}
         >
           <NavLink
-            to={item.path}
+            to={item?.path}
             className={({ isActive }) =>
               `relative group text-lg font-bold text-white ${
                 isActive ? "py-[4px] border-b-[2px] border-white" : "py-0.5"

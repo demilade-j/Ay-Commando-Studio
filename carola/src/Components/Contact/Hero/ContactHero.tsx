@@ -14,8 +14,10 @@ export default function ContactHero() {
 
   return (
     <div className="relative w-full h-full">
+      <main className="absolute w-full lg:pt-0 pt-10">
       <NavHeader />
-      <main className="lg:flex md:flex hidden">
+      </main>
+      <main className="lg:flex hidden">
         <NavBar />
       </main>
 

@@ -24,11 +24,10 @@ export default function HomePage() {
 
   return (
     <div className="relative w-full h-full">
-      {/* Top header (scrolls away) */}
-      <NavHeader />
-
-      {/* Navbar (sticks after scroll) */}
-      <main className="lg:flex md:flex hidden">
+      <main className="absolute w-full lg:pt-0 pt-10">
+        <NavHeader />
+      </main>
+      <main className="lg:flex hidden">
         <NavBar />
       </main>
 

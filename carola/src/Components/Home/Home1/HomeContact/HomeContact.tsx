@@ -1,6 +1,9 @@
 import { ChevronRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function HomeContact() {
+    const navigate = useNavigate()
+
   return (
     <div
       className="font-[sans-serif] w-full h-110 bg-cover bg-center gap-6 flex flex-col items-center justify-center text-white"
@@ -16,7 +19,7 @@ export default function HomeContact() {
         Te vis veniam detracto, tollit alterum graecis his ut. At pro essent
         aliquip qualisque, vis splendide posidonium ex.
       </p>
-      <button className="lg:px-4 lg:py-2 md:px-4 md:py-2 px-2 py-1 text-sm rounded-sm font-semibold flex items-center justify-center bg-[rgb(74,125,109)] text-white group hover:pl-4">
+      <button onClick={() => navigate("/contact")} className="lg:px-4 lg:py-2 md:px-4 md:py-2 cursor-pointer px-2 py-1 text-sm rounded-sm font-semibold flex items-center justify-center bg-[rgb(74,125,109)] text-white group hover:pl-4">
         Get In Touch{" "}
         <ChevronRight className="font-extrabold group-hover:pl-2" />
       </button>

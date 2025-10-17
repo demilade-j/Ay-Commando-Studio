@@ -9,8 +9,8 @@ const team = [
   },
   {
     id: 2,
-    name: "Robin Smith",
-    work: "Photographer",
+    name: "AjCommando",
+    work: "Photographer & Owner",
     img: "/team-2.jpg",
   },
   {
@@ -21,8 +21,8 @@ const team = [
   },
   {
     id: 4,
-    name: "Jeremy Welch",
-    work: "Retoucher",
+    name: "John Doe",
+    work: "Retoucher and expert coder",
     img: "/team-4.jpg",
   },
 ];
