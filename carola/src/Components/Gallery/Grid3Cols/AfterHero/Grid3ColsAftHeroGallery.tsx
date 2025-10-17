@@ -40,7 +40,7 @@ export default function Grid3ColsAftHeroGallery() {
   return (
     <>
       {/* Gallery grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+      <>
         {pics.map((pic, i) => (
           <motion.div
             key={pic.id}
@@ -71,7 +71,7 @@ export default function Grid3ColsAftHeroGallery() {
             </span>
           </motion.div>
         ))}
-      </div>
+      </>
 
       {/* Lightbox Modal */}
       <Lightbox
