@@ -9,7 +9,7 @@ export default function HomeFooter() {
           About Us
         </p>
         <p className="text-[1.009rem] leading-[25px]">
-          We're AyCommando, a team of photographers & videographers. Sed ut
+          We're AjCommando, a team of photographers & videographers. Sed ut
           perspiciatis unde omnis iste natus error sit voluptatem accusantium
           doloremque laudantium. Est sale definitiones id. Ut quo quem harum
           munere, eu labore voluptatum mei.
@@ -25,26 +25,29 @@ export default function HomeFooter() {
             <span>
               <MapPin size={18} className="text-green-700" />
             </span>
-            40 Park Ave, Brooklyn, New York
+            Arida Bustop Ikotun Idimu Lagos.
           </article>
-          <article className="flex gap-2 items-center ">
+
+          <a href="tel:+8171027894" className="flex gap-2 items-center ">
             <span>
               <Smartphone size={18} className="text-green-700" />
             </span>
-            1-800-111-2222
-          </article>
-          <article className="flex gap-2 items-center ">
+            08171027894 (Owner)
+          </a>
+
+          <a href="tel:+7057723767" className="flex gap-2 items-center ">
             <span>
               <Smartphone size={18} className="text-green-700" />
             </span>
-            1-800-111-3333
-          </article>
-          <article className="flex gap-2 items-center ">
+            07057723767 (Coder)
+          </a>
+          
+          <a href="mailto:" className="flex gap-2 items-center ">
             <span>
               <Mail size={18} className="text-green-700" />
             </span>
             contact@example.com
-          </article>
+          </a>
         </p>
       </main>
 
@@ -54,9 +57,8 @@ export default function HomeFooter() {
         </p>
         <p className="text-[1rem] flex flex-col gap-2 list-none">
           <li>Home</li>
-          <li>About</li>
-          <li>Portfolio</li>
-          <li>FAQ</li>
+          <li>Gallery</li>
+          <li>FAQs</li>
           <li>Contact</li>
         </p>
       </main>

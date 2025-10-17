@@ -13,12 +13,14 @@ import Grid3GalleryCols from './Components/Main Components/Grid3GalleryCols.tsx'
 import Grid4GalleryCols from './Components/Main Components/Grid4GalleryCols.tsx'
 import Faqs from './Components/Main Components/Faqs.tsx'
 import Contact from './Components/Main Components/Contact.tsx'
+import ErrorPage from './Components/Main Components/ErrorPage.tsx'
 
 const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
   {
     path: "/",
+    errorElement: <ErrorPage/>,
     element: (
         <App />
     ),
@@ -36,6 +38,8 @@ const router = createBrowserRouter([
       // { path: "/page/Team", element: <Team /> },
     ],
   },
+  {
+  }
 ]);
 
 createRoot(document.getElementById('root')!).render(

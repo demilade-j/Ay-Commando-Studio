@@ -60,7 +60,7 @@ export default function NavHeader() {
         </main>
 
         <main className="flex gap-5">
-          <button className="lg:px-4 lg:py-2 md:px-4 md:py-2 px-2 py-1 text-sm rounded-sm font-semibold flex items-center justify-center bg-[rgb(74,125,109)] text-white group hover:pl-4">
+          <button onClick={() => navigate("*")} className="lg:px-4 lg:py-2 md:px-4 md:py-2 px-2 py-1 text-sm rounded-sm font-semibold flex items-center justify-center bg-[rgb(74,125,109)] text-white group hover:pl-4">
             Book Now{" "}
             <ChevronRight className="font-extrabold group-hover:pl-2" />
           </button>
@@ -83,15 +83,15 @@ export default function NavHeader() {
           >
             <X className="group-hover:animate-spin" strokeWidth={3} />
           </span>
-          <ul className="flex flex-col gap-5 text-3xl font-semibold">
+          <ul className="flex flex-col gap-5 text-5xl font-semibold">
             <li className={`cursor-pointer w-fit ${modal2 ? "text-green-500" : "text-white"}`} onClick={() => setModal2(!modal2)}>Home</li>
-            {modal2 && <div className="text-sm -mt-2 px-5 cursor-pointer w-fit text-green-300">
+            {modal2 && <div className="text-xl -mt-2 px-5 cursor-pointer w-fit text-green-300">
               <li onClick={() => navigate("/")} className="transform duration-800 hover:translate-x-3">Home 1</li>
               <li onClick={() => navigate("/homeVideo")} className="transform duration-800 hover:translate-x-3">Home Video</li>
             </div> }
 
             <li className={`cursor-pointer w-fit ${modal3 ? "text-green-500" : "text-white"}`} onClick={() => setModal3(!modal3)}>Gallery</li>
-            {modal3 && <div className="text-sm -mt-2 px-5 cursor-pointer w-fit text-green-300">
+            {modal3 && <div className="text-xl -mt-2 px-5 cursor-pointer w-fit text-green-300">
               <li onClick={() => navigate("/masonaryCols2")} className="transform duration-800 hover:translate-x-3">Masonry 2 Cols</li>
             <li onClick={() => navigate("/masonaryCols3")} className="transform duration-800 hover:translate-x-3">Masonry 3 Cols</li>
             <li onClick={() => navigate("/masonaryCols4")} className="transform duration-800 hover:translate-x-3">Masonry 4 Cols</li>
